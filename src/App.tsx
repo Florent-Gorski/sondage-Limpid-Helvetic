@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import WelcomeScreen from "./components/WelcomeScreen";
 import EmotionQuestion from "./components/EmotionQuestion";
 import PriorityQuestion from "./components/PriorityQuestion";
@@ -8,7 +9,7 @@ import FinalScreen from "./components/FinalScreen";
 
 type Step = "welcome" | "emotion" | "priority" | "clarity" | "vision" | "final";
 
-function App()
+export default function App()
 {
   const [step, setStep] = useState<Step>("welcome");
   const [answers, setAnswers] = useState<{
@@ -78,5 +79,3 @@ function App()
       return <FinalScreen onRestart={() => setStep("welcome")} />;
   }
 }
-
-export default App;
